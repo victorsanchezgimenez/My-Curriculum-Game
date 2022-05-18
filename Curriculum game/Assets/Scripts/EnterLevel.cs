@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnterLevel : MonoBehaviour
 {
     public ChangeLevel changeLevelScript;
+
     public bool isInside = false;
 
     private void OnTriggerStay(Collider other) {
@@ -13,7 +14,7 @@ public class EnterLevel : MonoBehaviour
         if(other.gameObject.tag == "Player" && Input.GetKey(KeyCode.Space))
         {
             changeLevelScript.isChanging = true;
-            Debug.Log(isInside);
+
 
         }
     }
