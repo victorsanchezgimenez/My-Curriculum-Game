@@ -57,7 +57,6 @@ public class CameraController : MonoBehaviour
             followCharacter.normalCameraTwo = false;
             followCharacter.zoomCamera = true;
         }
-        Debug.Log(followCharacter.zoomCamera);
     }
     
 }

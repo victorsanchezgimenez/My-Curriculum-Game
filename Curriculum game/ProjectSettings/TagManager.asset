@@ -9,6 +9,14 @@ TagManager:
   - NormalCamera
   - VirtualCamera
   - ZoomCamera
+  - Light
+  - GitHub
+  - LightPoint
+  - PlatformDay
+  - Gmail
+  - Youtube
+  - LinkedIn
+  - ResetController
   layers:
   - Default
   - TransparentFX

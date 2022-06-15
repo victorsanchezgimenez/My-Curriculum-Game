@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ResetControll : MonoBehaviour
 {
-    public GameObject structure;
-
     [HideInInspector]
     public bool isReset = false;
 
