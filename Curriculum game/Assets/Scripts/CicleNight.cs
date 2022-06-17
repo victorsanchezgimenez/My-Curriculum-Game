@@ -18,7 +18,6 @@ public class CicleNight : MonoBehaviour
         lightComponent = GameObject.FindGameObjectWithTag("Light").transform;
         startRotationPosition = lightComponent.transform.rotation;
 
-
     }
 
     private void FixedUpdate() 

@@ -28,7 +28,7 @@ public class ResetPositionObject : MonoBehaviour
 
            for (int i = 0 ; i < startPos.Length ; ++i)
             {
-                    startPos[i].transform.position = resetPos[i];
+                startPos[i].transform.position = resetPos[i];
             }
             rc.isReset = false;
         }

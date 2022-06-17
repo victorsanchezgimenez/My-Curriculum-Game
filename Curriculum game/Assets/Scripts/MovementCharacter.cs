@@ -64,7 +64,7 @@ public class MovementCharacter : MonoBehaviour
 
         movementFactor = (rawSinWave + 1f) / 2f;
 
-        transform.position = new Vector3 (this.transform.position.x, 0.5f + movementUpgrade * movementFactor, this.transform.position.z);
+        transform.position = new Vector3 (this.transform.position.x, 2.5f + movementUpgrade * movementFactor, this.transform.position.z);
         
     }
 

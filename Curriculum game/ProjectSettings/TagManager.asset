@@ -17,6 +17,10 @@ TagManager:
   - Youtube
   - LinkedIn
   - ResetController
+  - LevelController
+  - LevelOne
+  - LevelTwo
+  - LevelThree
   layers:
   - Default
   - TransparentFX
