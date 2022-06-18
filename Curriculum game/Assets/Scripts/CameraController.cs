@@ -23,7 +23,6 @@ public class CameraController : MonoBehaviour
 
         if(other.gameObject.tag == "ChangeCamera")
         {
-            Debug.Log("Enter here");
             followCharacter.normalCamera = false;
             followCharacter.zoomCamera = false;
             followCharacter.normalCameraTwo = false;

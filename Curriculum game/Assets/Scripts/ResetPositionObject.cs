@@ -13,8 +13,6 @@ public class ResetPositionObject : MonoBehaviour
     {
         resetControll = GameObject.FindGameObjectWithTag("ResetController");
         rc = resetControll.GetComponent<ResetControll>();
-        Debug.Log(resetPos.Length);
-        Debug.Log(startPos.Length);
         for(int i = 0 ; i < startPos.Length ; ++i)
         {
             resetPos[i] = startPos[i].transform.position;

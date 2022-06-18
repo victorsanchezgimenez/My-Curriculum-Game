@@ -10,8 +10,7 @@ public class CharacterController : MonoBehaviour
     [HideInInspector]
     public bool sceneOne = false;
     private bool internController = false;
-    [HideInInspector]
-    public bool anotherController = false;
+    [SerializeField] MeshRenderer[] renderers = null;
     Scene scene;
 
     private Vector3 currentPosition;
@@ -37,30 +36,36 @@ public class CharacterController : MonoBehaviour
     }
     void Update()
     {
+        if(scene.name == null)
+        {
+            scene = SceneManager.GetActiveScene();
+        }
+
         if(player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        
-        if(anotherController)
-        {
-            scene = SceneManager.GetActiveScene();
-            anotherController = false;
-        }
-        
+
         if(scene.name == "MainScene")
         {
             if(!sceneOne){
-                player.SetActive(true);
+            
+                player.GetComponent<MovementCharacter>().enabled = true;
+                foreach(var renderer in renderers){
+                    renderer.enabled = true;
+                }
+                
                 sceneOne = true;
                 internController = false;
-                anotherController = false;
             }
         }else{
             
             if(!internController)
             {
-                player.SetActive(false);
+                player.GetComponent<MovementCharacter>().enabled = false;
+                foreach(var renderer in renderers){
+                    renderer.enabled = false;
+                }
                 currentPosition = player.transform.position;
                 sceneOne = false;
                 scene = SceneManager.GetActiveScene();

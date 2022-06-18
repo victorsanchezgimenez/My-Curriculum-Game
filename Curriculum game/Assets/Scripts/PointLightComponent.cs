@@ -18,7 +18,6 @@ public class PointLightComponent : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(cicleNight.isNight);
         if(cicleNight.isNight)
         {
             Debug.Log("Enter");

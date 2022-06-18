@@ -9765,6 +9765,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &361951763 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2874470097042666682, guid: 2dbf5b5cfed345d4390ccaf933870f31, type: 3}
+  m_PrefabInstance: {fileID: 238392558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &374303388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14040,8 +14045,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.095241, y: 6.7587423, z: 3.9815037}
-  m_Center: {x: -0.080486804, y: 3.4043236, z: 0.10193569}
+  m_Size: {x: 2.0318577, y: 2.8066363, z: 1.9674729}
+  m_Center: {x: 0.071576335, y: 1.4282707, z: 0.011162289}
 --- !u!4 &578015609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35dc08b801f8eae499f771e1fdcdc455, type: 3}
@@ -70579,6 +70584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9930f921118f2374cafae37298f9c7e0, type: 3}
+--- !u!23 &1858096041 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6906352945116191130, guid: 2dbf5b5cfed345d4390ccaf933870f31, type: 3}
+  m_PrefabInstance: {fileID: 238392558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1864059768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74275,6 +74285,11 @@ Transform:
   m_Father: {fileID: 177819972}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!23 &2061178399 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -739424772371504939, guid: 2dbf5b5cfed345d4390ccaf933870f31, type: 3}
+  m_PrefabInstance: {fileID: 238392558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2062159542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79832,7 +79847,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneOne: 0
-  anotherController: 0
+  renderers:
+  - {fileID: 2061178399}
+  - {fileID: 361951763}
+  - {fileID: 1858096041}
 --- !u!4 &2112367000
 Transform:
   m_ObjectHideFlags: 0
@@ -80530,6 +80548,10 @@ PrefabInstance:
     - target: {fileID: 6362334029074528270, guid: 729916f7237271e4e834872d8029e7be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362334029494760246, guid: 729916f7237271e4e834872d8029e7be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6362334029494760246, guid: 729916f7237271e4e834872d8029e7be, type: 3}
       propertyPath: m_StaticEditorFlags

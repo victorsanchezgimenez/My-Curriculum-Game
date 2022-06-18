@@ -14,7 +14,7 @@ public class EnterLevel : MonoBehaviour
     {
         levelController = GameObject.FindGameObjectWithTag("LevelController");
         changeLevelScript = levelController.GetComponent<ChangeLevel>();
-        Debug.Log(gameObject.tag);
+
     }
 
     private void OnTriggerStay(Collider other) {

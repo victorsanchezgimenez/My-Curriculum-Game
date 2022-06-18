@@ -21,6 +21,7 @@ TagManager:
   - LevelOne
   - LevelTwo
   - LevelThree
+  - Friendly
   layers:
   - Default
   - TransparentFX
