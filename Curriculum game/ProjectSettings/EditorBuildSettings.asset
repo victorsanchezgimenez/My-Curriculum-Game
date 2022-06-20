@@ -10,5 +10,11 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/RocketBoost.unity
+    guid: e1a1768798072534f8bc696f262facfb
+  - enabled: 1
+    path: Assets/Scenes/RocketBoost2.unity
     guid: d85e79c74c15b1a4f8a9e86b316704f0
+  - enabled: 1
+    path: Assets/Scenes/RocketBoost3.unity
+    guid: e98d9ee69e8927d4a8aaa18c37f74e9f
   m_configObjects: {}

@@ -98,14 +98,13 @@ public class CollisionHandler : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        if(nextSceneIndex == 4)
         {
             player.SetActive(true);
             nextSceneIndex = 0;
         }
         animator.SetBool("FadeIn", false);
         changeLevel.FadeToLevel(nextSceneIndex);
-        //SceneManager.LoadScene(nextSceneIndex);
 
     }  
 }

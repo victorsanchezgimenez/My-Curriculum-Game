@@ -9,10 +9,8 @@ public class CameraController : MonoBehaviour
     public FollowCharacter followCharacter;
     public GameObject virtualCamera;
 
-    private void Start() {
 
-    }
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerStay(Collider other) 
     {
         if(virtualCamera == null){
 

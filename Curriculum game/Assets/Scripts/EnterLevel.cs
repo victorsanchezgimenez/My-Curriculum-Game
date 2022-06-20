@@ -28,11 +28,11 @@ public class EnterLevel : MonoBehaviour
                     break;
                 
                 case "LevelTwo":
-                    levelSelected = 2;
+                    levelSelected = 4;
                     break;
                 
                 case "LevelThree":
-                    levelSelected = 3;
+                    levelSelected = 5;
                     break;
             }
     

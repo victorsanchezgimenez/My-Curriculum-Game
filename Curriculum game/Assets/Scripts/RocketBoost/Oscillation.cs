@@ -23,7 +23,6 @@ public class Oscillation : MonoBehaviour
         float cycles = Time.time / period; //continually growing over time
         const float tau = Mathf.PI *2; //constant value of 6.283
         float rawSinWave = Mathf.Sin(cycles * tau); //going from -1 to 1
-        Debug.Log(rawSinWave);
         movementFactor = (rawSinWave + 1f) / 2f; //recalculated to go from 0 to 1 so its cleaner
         Vector3 offset = movementVector * movementFactor;
         transform.position = startingPosition + offset;

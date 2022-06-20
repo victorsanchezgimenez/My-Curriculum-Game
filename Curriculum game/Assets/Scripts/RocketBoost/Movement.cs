@@ -12,16 +12,21 @@ public class Movement : MonoBehaviour
     [SerializeField] ParticleSystem leftEngineParticles;
     Rigidbody rb;
     AudioSource audioSource;
+    private ChangeLevel changeLevel;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        changeLevel = GameObject.FindGameObjectWithTag("LevelController").GetComponent<ChangeLevel>();
     }
 
     void Update()
     {
-        ProcessThrust();
-        ProcessRotation();
+        if(changeLevel.panelIsOpen == false){
+
+            ProcessThrust();
+            ProcessRotation();
+        }
     }
 
 
@@ -50,7 +55,6 @@ public class Movement : MonoBehaviour
             mainEngineParticles.Play();
             rightEngineParticles.Play();
             leftEngineParticles.Play();
-            Debug.Log("its playing");
         }
     }
     private void StopThrust()
