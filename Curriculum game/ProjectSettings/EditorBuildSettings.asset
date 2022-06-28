@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RocketBoost3.unity
     guid: e98d9ee69e8927d4a8aaa18c37f74e9f
+  - enabled: 1
+    path: Assets/Scenes/TowerDefense.unity
+    guid: 24060784c61e96e419a55e65216325b2
+  - enabled: 1
+    path: Assets/Scenes/StarCraftBattle.unity
+    guid: 9e0a0d179ef300e44a82710fae59fd06
   m_configObjects: {}

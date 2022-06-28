@@ -13,6 +13,8 @@ public class ChangeLevel : MonoBehaviour
     public GameObject player;
     public Animator animator;
     public GameObject informationPanelGameOne;
+    public GameObject informationPanelGameTwo;
+    public GameObject informationPanelGameThree;
     Scene scene;
 
     public bool isChanging = false;
@@ -36,6 +38,8 @@ public class ChangeLevel : MonoBehaviour
     void Start() 
     {
         informationPanelGameOne.SetActive(false);
+        informationPanelGameTwo.SetActive(false);
+        informationPanelGameThree.SetActive(false);
         scene = SceneManager.GetActiveScene();
         if(scene.name == "MainScene"){
             levelOne = GameObject.FindGameObjectWithTag("LevelOne");
@@ -52,6 +56,7 @@ public class ChangeLevel : MonoBehaviour
     
     void Update() 
     {
+        Debug.Log(panelIsOpen);
         if(scene.name == null){
             Debug.Log("Entering here");
             scene = SceneManager.GetActiveScene();
@@ -81,7 +86,7 @@ public class ChangeLevel : MonoBehaviour
                 animator.SetBool("FadeIn", false);
                 player.GetComponent<MovementCharacter>().enabled = false;
 
-                FadeToLevel(1);
+                FadeToLevel(4);
 
             }
             else if (levelThree.GetComponent<EnterLevel>().levelSelected == 5)
@@ -89,15 +94,23 @@ public class ChangeLevel : MonoBehaviour
                 Debug.Log("Enter Level 3");
                 animator.SetBool("FadeIn", false);
                 player.GetComponent<MovementCharacter>().enabled = false;
-                FadeToLevel(1);
+                FadeToLevel(5);
 
             }
             
         }
 
-        if(isChanging && Input.GetKeyDown(KeyCode.Escape) && (scene.name == "RocketBoost" || scene.name == "RocketBoost2" || scene.name == "RocketBoost3"))
+        if(isChanging && Input.GetKeyDown(KeyCode.R) && (scene.name == "RocketBoost" || scene.name == "RocketBoost2" || scene.name == "RocketBoost3" || scene.name == "TowerDefense" || scene.name == "StarCraftBattle"))
         {
             Debug.Log("Cambiando A nivel 1");
+            if(informationPanelGameTwo.activeSelf == true || informationPanelGameOne.activeSelf == true || informationPanelGameThree.activeSelf == true)
+            {
+                Time.timeScale = 1;
+                informationPanelGameOne.SetActive(false);
+                informationPanelGameTwo.SetActive(false);
+                informationPanelGameThree.SetActive(false);
+                panelIsOpen = false;
+            }
             animator.SetBool("FadeIn", false);
             FadeToLevel(0);
         }
@@ -108,7 +121,6 @@ public class ChangeLevel : MonoBehaviour
             {
                 if (panelIsOpen)
                 {
-                    Debug.Log("Entrando en el true");
                     Time.timeScale = 1;
                     informationPanelGameOne.SetActive(false);
                     panelIsOpen = false;
@@ -116,11 +128,54 @@ public class ChangeLevel : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("eNTRANDO AQUI");
                     Time.timeScale = 0;
                     informationPanelGameOne.SetActive(true);
                     panelIsOpen = true;
 
+                }
+            }
+        }
+
+        if(scene.name == "TowerDefense")
+        {
+            if(Input.GetKeyDown(KeyCode.I))
+            {
+                Debug.Log(panelIsOpen);
+                if(panelIsOpen)
+                {
+                    Debug.Log("Entrando a desactivar pantalla");
+                    Time.timeScale = 1;
+                    informationPanelGameTwo.SetActive(false);
+                    panelIsOpen = false;
+                }
+                else
+                {
+                    Debug.Log("Entrando EN ESTE OTRO");
+                    Time.timeScale = 0;
+                    informationPanelGameTwo.SetActive(true);
+                    panelIsOpen = true;
+                }
+            }
+        }
+
+        if(scene.name == "StarCraftBattle")
+        {
+            if(Input.GetKeyDown(KeyCode.I))
+            {
+                Debug.Log(panelIsOpen);
+                if(panelIsOpen)
+                {
+                    Debug.Log("Entrando a desactivar pantalla");
+                    Time.timeScale = 1;
+                    informationPanelGameThree.SetActive(false);
+                    panelIsOpen = false;
+                }
+                else
+                {
+                    Debug.Log("Entrando EN ESTE OTRO");
+                    Time.timeScale = 0;
+                    informationPanelGameThree.SetActive(true);
+                    panelIsOpen = true;
                 }
             }
         }
@@ -153,11 +208,18 @@ public class ChangeLevel : MonoBehaviour
             Time.timeScale = 0;
             informationPanelGameOne.SetActive(true);
             panelIsOpen = true;
+            
         }
-        else if(scene.name == "Game 2"){
+        else if(scene.name == "TowerDefense"){
+            Time.timeScale = 0;
+            informationPanelGameTwo.SetActive(true);
+            panelIsOpen = true;
 
         }
-        else if(scene.name == "Game 3"){
+        else if(scene.name == "StarCraftBattle"){
+            Time.timeScale = 0;
+            informationPanelGameThree.SetActive(true);
+            panelIsOpen = true;
 
         }
 

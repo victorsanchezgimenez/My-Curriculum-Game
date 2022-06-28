@@ -5,21 +5,69 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
-    [SerializeField] float waitTime = 1f;
-
+    [SerializeField][Range(0f, 5f)] float speed = 1f;
+    [SerializeField] Vector3 correctionAltitude;
+    Enemy enemy;
     
-    void Start() 
+    void OnEnable() 
     {
+        FindPath();
+        ReturnToStart();
         StartCoroutine(FollowPath());    
     }
 
+    void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
+
+    void FindPath()
+    {
+        path.Clear();
+
+        GameObject parent = GameObject.FindGameObjectWithTag("Path");
+
+        foreach(Transform child in parent.transform)
+        {
+            Waypoint waypoint = child.GetComponent<Waypoint>();
+
+            if(waypoint != null)
+            {
+                path.Add(waypoint);
+            }
+        }
+    }
+    
+    void ReturnToStart()
+    {
+        transform.position = path[0].transform.position + correctionAltitude;
+    }
+    
+    void FinishPath()
+    {
+        enemy.StealGold();
+        gameObject.SetActive(false);
+    }
     IEnumerator FollowPath()
     {
         foreach(Waypoint waypoint in path) {
-        {
-            transform.position = new Vector3(waypoint.transform.position.x, 0, transform.position.z);
-            yield return new WaitForSeconds(waitTime);
+        
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = waypoint.transform.position + correctionAltitude;
+            transform.LookAt(endPosition);
+            
+            float travelPercent = 0f;
+
+
+            while(travelPercent < 1f)
+            {
+                travelPercent += Time.deltaTime * speed;
+                transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
+                yield return new WaitForEndOfFrame();
+            }
+            
         }
-        }
+       
+       FinishPath();
     }
 }

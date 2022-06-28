@@ -22,6 +22,10 @@ TagManager:
   - LevelTwo
   - LevelThree
   - Friendly
+  - Fireball
+  - Enemy
+  - Path
+  - SpawnAtRuntime
   layers:
   - Default
   - TransparentFX
@@ -29,7 +33,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - PostProcessing
   - 
   - 
   - 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 204390212622416832}
   - component: {fileID: 2096694943382314011}
   - component: {fileID: 383493977539983404}
-  - component: {fileID: 8048277297937578820}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -36,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.88, y: 3.06}
+  m_AnchoredPosition: {x: 2.88, y: -0.00000023841858}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2096694943382314011
@@ -173,18 +172,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2096694943382314011}
   m_maskType: 0
---- !u!114 &8048277297937578820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3912850515676340648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea08e57e55d1cf646909a44151cf4def, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7732294552747176646
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +183,7 @@ GameObject:
   - component: {fileID: 7732294552747176647}
   - component: {fileID: 7007228763225027320}
   - component: {fileID: 7555757044873446841}
+  - component: {fileID: 4380348553384828737}
   m_Layer: 0
   m_Name: PathFloor
   m_TagString: Untagged
@@ -240,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4ce91753a4eefbf468aabe35fd427b81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -274,6 +262,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213dc8baf60123a46b9befb13432f6af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 8041534228808219040, guid: 3047e907786e6914889aba6e1e33d9c0, type: 3}
+  isPlaceable: 0
+  correctionAltitude: {x: 0, y: 3, z: 0}
+--- !u!65 &4380348553384828737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732294552747176646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1.3507118, z: 10}
+  m_Center: {x: 0, y: 0.17535606, z: 0}
 --- !u!1001 &328730955345500115
 PrefabInstance:
   m_ObjectHideFlags: 0

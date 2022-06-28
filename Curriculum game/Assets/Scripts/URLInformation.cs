@@ -22,7 +22,7 @@ public class URLInformation : MonoBehaviour
                     break;
 
                 case "Youtube":
-                    Application.OpenURL("https://studio.youtube.com/channel/UCrhM_2ymogfUa7EcyT2_yvA");
+                    Application.OpenURL("https://www.youtube.com/channel/UCrhM_2ymogfUa7EcyT2_yvA");
                     break;
 
                 case "Gmail":
